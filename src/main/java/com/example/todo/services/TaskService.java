@@ -29,7 +29,7 @@ public class TaskService {
     public ResponseEntity<?> getOneById(int id){
         Optional<Task> taskOption = taskRepository.findById(id);
         if(!taskOption.isPresent())
-             return ResponseEntity.status(HttpStatus.NOT_FOUND).body({"Task with id ["+id+"] not found");
+             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Task with id ["+id+"] not found");
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(taskOption);
     }
 }
